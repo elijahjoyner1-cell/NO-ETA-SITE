@@ -1,112 +1,22 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Dark mode variant */
-@custom-variant dark (&:is(.dark *));
-
-/* =========================
-   DESIGN TOKENS (SOURCE OF TRUTH)
-   ========================= */
-:root {
-  --radius: 0px;
-
-  /* Light theme */
-  --background: oklch(0.92 0.003 80);
-  --foreground: oklch(0.18 0 0);
-
-  --primary: oklch(0.78 0.165 70);
-  --primary-foreground: oklch(0.18 0 0);
-
-  --secondary: oklch(0.88 0.004 80);
-  --secondary-foreground: oklch(0.18 0 0);
-
-  --muted: oklch(0.88 0.004 80);
-  --muted-foreground: oklch(0.18 0 0 / 0.6);
-
-  --accent: oklch(0.78 0.165 70);
-  --accent-foreground: oklch(0.18 0 0);
-
-  --card: oklch(0.92 0.003 80);
-  --card-foreground: oklch(0.18 0 0);
-
-  --popover: oklch(0.92 0.003 80);
-  --popover-foreground: oklch(0.18 0 0);
-
-  --destructive: oklch(0.58 0.22 27);
-  --destructive-foreground: oklch(0.98 0 0);
-
-  --border: oklch(0.18 0 0 / 0.15);
-  --input: oklch(0.18 0 0 / 0.15);
-  --ring: oklch(0.78 0.165 70);
-
-  /* Fonts */
-  --font-display: "Inter Tight", sans-serif;
-  --font-sans: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+/* BASE */
+html,
+body {
+  height: 100%;
+  background: white;
+  color: black;
+  font-family: system-ui, sans-serif;
 }
 
-/* Dark theme overrides */
 .dark {
-  --background: oklch(0.18 0 0);
-  --foreground: oklch(0.92 0.003 80);
-
-  --primary: oklch(0.78 0.165 70);
-  --primary-foreground: oklch(0.18 0 0);
-
-  --secondary: oklch(0.24 0 0);
-  --secondary-foreground: oklch(0.92 0.003 80);
-
-  --muted: oklch(0.24 0 0);
-  --muted-foreground: oklch(0.92 0.003 80 / 0.6);
-
-  --accent: oklch(0.78 0.165 70);
-  --accent-foreground: oklch(0.18 0 0);
-
-  --card: oklch(0.18 0 0);
-  --card-foreground: oklch(0.92 0.003 80);
-
-  --popover: oklch(0.18 0 0);
-  --popover-foreground: oklch(0.92 0.003 80);
-
-  --border: oklch(0.92 0.003 80 / 0.15);
-  --input: oklch(0.92 0.003 80 / 0.15);
-  --ring: oklch(0.78 0.165 70);
+  background: #0a0a0a;
+  color: white;
 }
 
-/* =========================
-   BASE STYLES
-   ========================= */
-@layer base {
-  html,
-  body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  * {
-    border-color: var(--border);
-  }
-
-  ::selection {
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-  }
-}
-
-/* =========================
-   ANIMATIONS
-   ========================= */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@utility animate-marquee {
-  animation: marquee 28s linear infinite;
+/* simple defaults so site doesn't look broken */
+* {
+  box-sizing: border-box;
 }
