@@ -9,7 +9,6 @@ import {
 } from '@tanstack/react-router'
 import { useEffect, type ReactNode } from 'react'
 
-import appCss from '../styles.css?url'
 
 function NotFoundComponent() {
   return (
